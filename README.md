@@ -22,11 +22,11 @@ LED Anode → +5V through 330 Ω resistor, LED Cathode → P2.0 (active LOW) or 
 7. Repeat forever.
 
 # 8051 Assembly Program
+
 ORG 0000H
 
 START:
     MOV P2,#00H      ; LED ON (active LOW)
-    
     ACALL DELAY
     MOV P2,#0FFH     ; LED OFF
     ACALL DELAY
