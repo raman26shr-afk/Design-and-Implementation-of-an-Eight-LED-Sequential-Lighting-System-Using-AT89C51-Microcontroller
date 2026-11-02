@@ -26,6 +26,7 @@ ORG 0000H
 
 START:
     MOV P2,#00H      ; LED ON (active LOW)
+    
     ACALL DELAY
     MOV P2,#0FFH     ; LED OFF
     ACALL DELAY
