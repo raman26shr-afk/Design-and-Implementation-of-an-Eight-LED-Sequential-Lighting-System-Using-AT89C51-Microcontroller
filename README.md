@@ -23,36 +23,36 @@ LED Anode → +5V through 330 Ω resistor, LED Cathode → P2.0 (active LOW) or 
 
 # 8051 Assembly Program
 
-ORG 0000H
+    ORG 0000H
 
 
-START:
+    START:
 
-    MOV P2,#00H      ; LED ON (active LOW)
+        MOV P2,#00H      ; LED ON (active LOW)
 
-    ACALL DELAY
+        ACALL DELAY
  
-    MOV P2,#0FFH     ; LED OFF
+        MOV P2,#0FFH     ; LED OFF
   
-    ACALL DELAY
+        ACALL DELAY
  
-    SJMP START
+        SJMP START
 
 
-DELAY:
+    DELAY:
 
-    MOV R7,#255
+        MOV R7,#255
 
-L1: MOV R6,#255
+    L1: MOV R6,#255
 
-L2: DJNZ R6,L2
+    L2: DJNZ R6,L2
 
-    DJNZ R7,L1
+        DJNZ R7,L1
     
-    RET
+        RET
 
 
-END
+    END
 
 # Flow of Execution
 Initialize → LED ON → Delay → LED OFF → Delay → Repeat
