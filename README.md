@@ -25,19 +25,31 @@ LED Anode → +5V through 330 Ω resistor, LED Cathode → P2.0 (active LOW) or 
 
 ORG 0000H
 
+
 START:
     MOV P2,#00H      ; LED ON (active LOW)
+
     ACALL DELAY
+ 
     MOV P2,#0FFH     ; LED OFF
+  
     ACALL DELAY
+ 
     SJMP START
 
+
 DELAY:
+
     MOV R7,#255
+
 L1: MOV R6,#255
+
 L2: DJNZ R6,L2
+
     DJNZ R7,L1
+    
     RET
+
 
 END
 
