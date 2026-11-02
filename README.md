@@ -26,7 +26,8 @@ LED Anode → +5V through 330 Ω resistor, LED Cathode → P2.0 (active LOW) or 
 ORG 0000H
 
 
- START:
+START:
+
     MOV P2,#00H      ; LED ON (active LOW)
 
     ACALL DELAY
